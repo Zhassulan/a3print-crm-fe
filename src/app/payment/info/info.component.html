@@ -1,0 +1,62 @@
+<div class="container" *ngIf="payment">
+    <div class="paydocNum">
+        № п. поручения:
+    </div>
+    <div class="value">
+        {{ payment.payDocnum }}
+    </div>
+    <div class="title">
+        Клиент:
+    </div>
+    <div class="value">
+        {{ payment.sender }}
+    </div>
+    <div class="title">
+        Статус:
+    </div>
+    <div class="value">
+        {{ payment.status | paymentStatusRuPipe: payment.status}}
+    </div>
+    <div class="title" *ngIf="payment.status == PaymentStatus.DISTRIBUTED || payment.status == PaymentStatus.TRANSIT_DISTRIBUTED">
+        Разнесён:
+    </div>
+    <div class="value" *ngIf="payment.status == PaymentStatus.DISTRIBUTED || payment.status == PaymentStatus.TRANSIT_DISTRIBUTED">
+        {{ payment.distributed | date: 'short' }}
+    </div>
+    <div class="title" *ngIf="payment.status == PaymentStatus.DISTRIBUTED || payment.status == PaymentStatus.TRANSIT_DISTRIBUTED">
+        Пользователь:
+    </div>
+    <div class="value" *ngIf="payment.status == PaymentStatus.DISTRIBUTED || payment.status == PaymentStatus.TRANSIT_DISTRIBUTED">
+        {{ payment.agent }}
+    </div>
+    <div class="title">
+        БИН:
+    </div>
+    <div class="value">
+        {{ payment.rnnSender }}
+    </div>
+    <div class="title">
+        Менеджер:
+    </div>
+    <div class="value">
+        {{ payment.managedBy }}
+    </div>
+    <div class="title">
+        Номер платежа:
+    </div>
+    <div class="value">
+        {{ payment.payDocnum }}
+    </div>
+    <div class="title">
+        Сумма платежа:
+    </div>
+    <div class="value">
+        {{ payment.sum | currency : ' тг.' }}
+    </div>
+    <div class="title" *ngIf="payment.deferred">
+        Отложен на:
+    </div>
+    <div class="value" *ngIf="payment.deferred">
+        {{ payment.deferred | date: 'shortDate' }}
+    </div>
+</div>
