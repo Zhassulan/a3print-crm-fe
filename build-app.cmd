@@ -1,1 +1,2 @@
-ng build --configuration production --base-href /fe/
+ng build --configuration production
+REM --base-href /fe/

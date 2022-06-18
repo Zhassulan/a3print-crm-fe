@@ -1,19 +1,19 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over">
 
-        <mat-toolbar [ngStyle]="{'background-color': isDevMode() ? '#9FFFA5' : '#3F51B5'}">Меню</mat-toolbar>
+        <p>
+            <mat-toolbar>
+                <span>A3Print CRM</span>
+            </mat-toolbar>
+        </p>
 
         <mat-nav-list>
 
             <a mat-list-item routerLink="/" style="height: 0;"></a>
 
-            <a *ngFor="let item of routes"
-               mat-list-item
-               (click)="sidenav.close()"
-               routerLinkActive=""
-               #routerLinkActiveInstance="routerLinkActive"
-               [class.list-item-active]="routerLinkActiveInstance.isActive"
-               [routerLink]="[item.route]">
+            <a *ngFor="let item of routes" mat-list-item (click)="sidenav.close()" routerLinkActive=""
+                #routerLinkActiveInstance="routerLinkActive"
+                [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="[item.route]">
                 {{item.title}}
             </a>
 
@@ -22,7 +22,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <mat-toolbar [ngStyle]="{'background-color': isDevMode() ? '#00AC0B' : '#3F51B5'}">
+        <mat-toolbar>
             <mat-toolbar-row>
                 <button mat-icon-button id="menu" matTooltip="Меню" (click)="sidenav.toggle()">
                     <mat-icon>menu</mat-icon>
@@ -40,6 +40,7 @@
 
             </mat-toolbar-row>
         </mat-toolbar>
+
         <mat-progress-bar mode="indeterminate" *ngIf="onProgress" color="accent"></mat-progress-bar>
 
         <router-outlet></router-outlet>
@@ -47,4 +48,3 @@
     </mat-sidenav-content>
 
 </mat-sidenav-container>
-

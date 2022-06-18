@@ -1,0 +1,1 @@
+ng serve --live-reload --poll 1000

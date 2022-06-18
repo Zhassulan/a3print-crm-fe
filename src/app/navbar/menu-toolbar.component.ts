@@ -1,8 +1,8 @@
-import {AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, isDevMode, OnDestroy, Output} from '@angular/core';
-import {AuthService} from '../auth/auth.service';
-import {Router} from '@angular/router';
-import {Subscription} from 'rxjs';
-import {ProgressBarService} from '../progress-bar.service';
+import { AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, isDevMode, OnDestroy, Output } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ProgressBarService } from '../progress-bar.service';
 
 interface ROUTE {
   icon?: string;
@@ -23,42 +23,17 @@ export class MenuToolbarComponent implements AfterViewChecked, OnDestroy {
   routes: ROUTE[] = [
     {
       icon: 'credit_card',
-      route: 'payments',
-      title: 'Платежи',
-    },
-    /*  {
-        icon: 'credit_card',
-        route: 'payments-v2',
-        title: 'Платежи v2',
-      },*/
-    {
-      icon: 'credit_card',
-      route: 'raw',
-      title: 'Неизвестные платежи',
-    },
-    {
-      icon: 'dashboard',
-      route: 'clients',
-      title: 'Клиенты',
-    },
-    {
-      icon: 'dashboard',
-      route: 'mobipay',
-      title: 'Mobipay',
-    },
-    {
-      icon: 'assignment_ind',
-      route: 'registries',
-      title: 'Реестры',
+      route: 'employees',
+      title: 'Сотрудники',
     }
   ];
 
   @Output() toggleSidenav = new EventEmitter<void>();
 
   constructor(private authService: AuthService,
-              private router: Router,
-              private cdRef: ChangeDetectorRef,
-              private progressBarService: ProgressBarService) {
+    private router: Router,
+    private cdRef: ChangeDetectorRef,
+    private progressBarService: ProgressBarService) {
 
     this.subscription = this.progressBarService.progressAnnounced$.subscribe(data => this.onProgress = data);
   }

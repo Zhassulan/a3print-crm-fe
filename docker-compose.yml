@@ -1,9 +1,8 @@
 version: "3.7"
 services:
-  ncp-ui-dev:
-    restart: always
-    image: docker.tele2.kz/ncp/ncp-frontend-app:dev
+  a3print-crm-fe:
+    image: zhasst/a3print-crm-fe:latest
     network_mode: bridge
     ports:
       - "4200:80"
-    container_name: ncp-ui-dev
+    container_name: a3print-crm-fe
