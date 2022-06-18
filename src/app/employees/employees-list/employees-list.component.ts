@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 
 @Component({
   selector: 'app-employees-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.openDialog();
+  }
+
+  openDialog(): void {
+    this.dialog.open(EditEmployeeComponent, {
+      width: 'auto',
+      height: 'auto',
+      disableClose: true
+    });
   }
 
 }
