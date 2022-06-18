@@ -71,6 +71,7 @@ import { DlgEnterTemplateName } from './template/dlg/enter-template-name/dlg-ent
 import { DlgTemplateDetailComponent } from './template/dlg-template-detail/dlg-template-detail.component';
 import { DlgYesNoComponent } from './dialog/dlg-yes-no/dlg-yes-no.component';
 import { PaymentsTableComponent } from './payments/payments-table/payments-table-component';
+import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 
 registerLocaleData(localeRu, 'ru');
 
@@ -116,6 +117,7 @@ registerLocaleData(localeRu, 'ru');
     DlgTemplateDetailComponent,
     DlgYesNoComponent,
     PaymentsTableComponent,
+    EmployeesListComponent,
   ],
   imports: [
     CommonModule,

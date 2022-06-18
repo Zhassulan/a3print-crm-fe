@@ -4,12 +4,6 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProgressBarService } from '../progress-bar.service';
 
-interface ROUTE {
-  icon?: string;
-  route?: string;
-  title?: string;
-}
-
 @Component({
   selector: 'app-menu-toolbar',
   templateUrl: './menu-toolbar.component.html',
@@ -19,14 +13,10 @@ export class MenuToolbarComponent implements AfterViewChecked, OnDestroy {
 
   onProgress: boolean;
   subscription: Subscription;
-
-  routes: ROUTE[] = [
-    {
-      icon: 'credit_card',
-      route: 'employees',
-      title: 'Сотрудники',
-    }
-  ];
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+  showSubSubMenu: boolean = false;
 
   @Output() toggleSidenav = new EventEmitter<void>();
 
@@ -64,5 +54,4 @@ export class MenuToolbarComponent implements AfterViewChecked, OnDestroy {
   isDevMode() {
     return isDevMode();
   }
-
 }

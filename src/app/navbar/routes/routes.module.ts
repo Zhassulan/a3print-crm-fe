@@ -13,6 +13,7 @@ import { RawComponent } from '../../raw-payments/raw.component';
 import { TemplatesComponent } from '../../template/templates/templates.component';
 import { TemplateComponent } from '../../template/template/template.component';
 import { RegistriesComponent } from '../../public-registry/registries/registries.component';
+import { EmployeesListComponent } from 'src/app/employees/employees-list/employees-list.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,14 @@ const routes: Routes = [
     data: {
       component: 'PaymentsComponent',
       breadcrumb: 'Платежи'
+    }
+  },
+  {
+    path: 'employees',
+    component: EmployeesListComponent,
+    data: {
+      component: 'EmployeesListComponent',
+      breadcrumb: 'Сотрудники'
     }
   },
   /* {
