@@ -8,9 +8,23 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EditEmployeeComponent implements OnInit {
 
+  employeeName: string;
+  phoneNumber: string;
+  salary: string;
+  login: string;
+  password: string;
+  email: string;
+  cardNumber: string;
+
   constructor(public dialogRef: MatDialogRef<EditEmployeeComponent>) { }
 
   ngOnInit(): void {
   }
 
+  click() {
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
 }

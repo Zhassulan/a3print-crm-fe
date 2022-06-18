@@ -3,28 +3,27 @@
     grid-template-rows: auto;
     grid-template-columns: auto auto;
     justify-items: stretch;
-    padding: 0.5em;
-    background-color: blue;
+    padding: 1em;
   }
   
   .column {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto;
-    background-color: brown;
+    padding: 1em;
   }
   
   .photo {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto auto;
-    background-color: chartreuse;
+    padding: 1em;
   }
   
   .buttons {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 3fr 3fr 1fr 1fr;
-    background-color: aqua;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1em;
   }
   

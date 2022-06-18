@@ -1,37 +1,87 @@
-<p>Редактировать сотрудника</p>
+<h2>Редактировать сотрудника</h2>
+
 <div class="container">
-  <div>
-    <div class="column">
-      <div>Имя сотрудника</div>
-      <div>Номер телефона</div>
-      <div>Базовый оклад</div>
-      <div>
-        <div class="photo">
-          <div>picture</div>
-          <div>btn</div>
+    <div>
+        <div class="column">
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Имя сотрудника" required [(ngModel)]="employeeName"
+                        name="employeeName">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Номер телефона" required [(ngModel)]="phoneNumber" name="phoneNumber">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Базовый оклад" required [(ngModel)]="salary" name="salary">
+                </mat-form-field>
+            </div>
+            <div>
+                <div class="photo">
+                    <div>picture</div>
+                    <div>
+                        <button mat-icon-button (click)="click()">
+                            <mat-icon>add_circle</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Логин" required [(ngModel)]="login" name="login">
+                </mat-form-field>
+            </div>
         </div>
-      </div>
-      <div>Логин</div>
     </div>
-  </div>
-  <div>
-    <div class="column">
-      <div>занимаемая должность</div>
-      <div>email</div>
-      <div>Номер карты</div>
-      <div>
-        <div class="photo">
-          <div>picture</div>
-          <div>btn</div>
+    <div>
+        <div class="column">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Занимаемая должность</mat-label>
+                    <mat-select>
+                        <mat-option value="one">First option</mat-option>
+                        <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="email" required [(ngModel)]="email" name="email">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Номер карты" required [(ngModel)]="cardNumber" name="cardNumber">
+                </mat-form-field>
+            </div>
+            <div>
+                <div class="photo">
+                    <div>picture</div>
+                    <div> 
+                        <button mat-icon-button (click)="click()">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </div>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Пароль" required [(ngModel)]="password" name="password">
+                </mat-form-field>
+            </div>
         </div>
-      </div>
-      <div>Пароль</div>
     </div>
-  </div>
 </div>
 <div class="buttons">
-  <div>1</div>
-  <div>2</div>
-  <div>btn</div>
-  <div>btn</div>
+    <div></div>
+    <div></div>
+    <div>
+        <button mat-raised-button color="primary" (click)="click()">Сохранить</button>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="close()">Закрыть</button>
+    </div>
 </div>
