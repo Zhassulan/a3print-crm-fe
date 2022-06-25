@@ -17,6 +17,7 @@ import { EmployeesListComponent } from './employees/employees-list/employees-lis
 import { MaterialsModule } from './materials/materials.module';
 import { MyDateAdapter } from './my-date-adapter';
 import {MenuToolbarComponent} from './navbar/menu-toolbar.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 registerLocaleData(localeRu, 'ru');
 
@@ -26,6 +27,7 @@ registerLocaleData(localeRu, 'ru');
     EmployeesListComponent,
     EditEmployeeComponent,
     MenuToolbarComponent,
+    FileUploadComponent,
   ],
   imports: [
     CommonModule,
