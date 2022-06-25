@@ -1,6 +1,5 @@
 import {DatePipe} from '@angular/common';
 import {Md5} from 'ts-md5';
-import {DateRangeMills} from './payments/model/date-range-mills';
 
 export class Utils {
 
@@ -36,10 +35,6 @@ export class Utils {
     return JSON.stringify(data, undefined, 3);
   }
 
-  static getTodayDateRangeMills(): DateRangeMills {
-    return new DateRangeMills(new Date().setHours(0, 0, 0, 0), new Date().setHours(23, 59, 59, 999));
-  }
-
   static getTodayStartTime(): Date {
     const res = new Date();
     res.setHours(0, 0, 0, 0);
@@ -51,5 +46,4 @@ export class Utils {
     res.setHours(23, 59, 59, 999);
     return res;
   }
-
 }

@@ -1,7 +1,5 @@
 import {Title} from '@angular/platform-browser';
-import {AfterViewInit, Component, isDevMode, OnInit, ViewEncapsulation} from '@angular/core';
-import {AppService} from './app.service';
-import {environment} from '../environments/environment';
+import {AfterViewInit, Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -11,8 +9,7 @@ import {environment} from '../environments/environment';
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-    constructor(private titleService: Title,
-        private appService: AppService) {
+    constructor(private titleService: Title) {
     }
 
     ngOnInit(): void {    }
@@ -22,7 +19,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.appService.checkVer();
     }
-
 }

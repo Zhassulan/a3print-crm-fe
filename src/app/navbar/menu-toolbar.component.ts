@@ -1,5 +1,4 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, isDevMode, OnDestroy, Output } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProgressBarService } from '../progress-bar.service';
@@ -14,14 +13,13 @@ export class MenuToolbarComponent implements AfterViewChecked, OnDestroy {
   onProgress: boolean;
   subscription: Subscription;
   isExpanded = true;
-  showSubmenu: boolean = false;
+  showSubmenu = false;
   isShowing = false;
-  showSubSubMenu: boolean = false;
+  showSubSubMenu = false;
 
   @Output() toggleSidenav = new EventEmitter<void>();
 
-  constructor(private authService: AuthService,
-    private router: Router,
+  constructor(private router: Router,
     private cdRef: ChangeDetectorRef,
     private progressBarService: ProgressBarService) {
 
@@ -33,12 +31,10 @@ export class MenuToolbarComponent implements AfterViewChecked, OnDestroy {
   }
 
   logout() {
-    this.authService.logout();
     this.router.navigate(['login']);
   }
 
   getUser() {
-    return this.authService.getUser();
   }
 
   ngOnDestroy(): void {
