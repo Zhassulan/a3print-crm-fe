@@ -1,7 +1,7 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, isDevMode, OnDestroy, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ProgressBarService } from '../progress-bar.service';
+import { ProgressBarService } from '../service/progress-bar.service';
 
 @Component({
   selector: 'app-menu-toolbar',
